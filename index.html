@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maxence Minarro | Développeur Web</title>
+
+    <!-- SEO de base -->
+    <meta name="description" content="Portfolio de Maxence Minarro, développeur web en BTS SIO SLAM. Spécialisé en PHP, MySQL, JavaScript et architecture MVC.">
+    <meta name="keywords" content="développeur web, portfolio, PHP, MySQL, JavaScript, HTML, CSS, BTS SIO, SLAM, Maxence Minarro, Nîmes">
+    <meta name="author" content="Maxence Minarro">
+
+    <!-- Open Graph (Facebook, LinkedIn) -->
+    <meta property="og:title" content="Maxence Minarro | Développeur Web">
+    <meta property="og:description" content="Portfolio de Maxence Minarro, développeur web en BTS SIO SLAM. Spécialisé en PHP, MySQL, JavaScript et architecture MVC.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://maxenceminarro.github.io/">
+    <meta property="og:image" content="https://maxenceminarro.github.io/img/preview.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Maxence Minarro | Développeur Web">
+    <meta name="twitter:description" content="Portfolio de Maxence Minarro, développeur web en BTS SIO SLAM.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=13">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">M<span class="accent">.</span></div>
+            <div class="preloader-bar">
+                <div class="preloader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="#" class="nav-logo">Maxence<span class="accent">.</span></a>
+        <button class="nav-toggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#projets">Projets</a></li>
+            <li><a href="#competences">Compétences</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="hero-bg">
+            <div class="hero-pattern"></div>
+            <div class="floating-elements">
+                <div class="float-circle float-1"></div>
+                <div class="float-circle float-2"></div>
+                <div class="float-arch"></div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-tag">
+                <span class="tag-dot"></span>
+                <span>Développeur Web</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">Hello, je suis</span>
+                <span class="title-name">Maxence Minarro<span class="accent">.</span></span>
+            </h1>
+            <p class="hero-description">
+                Étudiant BTS SIO SLAM impliqué dans mes projets.
+                Je transforme des idées en solutions numériques élégantes et fonctionnelles.
+            </p>
+            <div class="hero-cta">
+                <a href="#projets" class="btn btn-primary">
+                    <span>Découvrir mes projets</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <a href="#contact" class="btn btn-secondary">Me contacter</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Défiler</span>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projets" class="projects">
+        <div class="section-header">
+            <span class="section-tag">Portfolio</span>
+            <h2 class="section-title">Mes Projets<span class="accent">.</span></h2>
+            <p class="section-subtitle">Une sélection de mes réalisations les plus récentes</p>
+        </div>
+        
+        <div class="projects-grid">
+            <!-- Project 1 - Tennis Club -->
+            <article class="project-card project-featured flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="project-image">
+                            <img src="img/tennis-1.png" alt="Tableau de bord Tennis Club">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">Application Web</span>
+                            <h3 class="project-title">Gestion Club de Tennis</h3>
+                            <p class="project-description">
+                                Application web complète de gestion pour un club de tennis développée en architecture MVC. 
+                                Fonctionnalités : gestion des licenciés (CRUD), des formules d'inscription (cours collectifs, 
+                                individuels, championnats), du personnel (moniteurs, stagiaires), et du bureau avec mandats 
+                                temporels. Base de données MySQL avec 10 tables et 2 vues SQL. Sécurité renforcée : 
+                                authentification bcrypt, sessions sécurisées ANSSI, protection XSS, conformité RGPD, 
+                                et logging des connexions.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">PHP 8</span>
+                                <span class="tag">MySQL</span>
+                                <span class="tag">MVC</span>
+                                <span class="tag">Composer</span>
+                                <span class="tag">RGPD</span>
+                                <span class="tag">Sécurité ANSSI</span>
+                            </div>
+                            <span class="flip-hint">↻ Survoler pour voir plus</span>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="back-image">
+                            <img src="img/tennis-2.png" alt="Gestion des Licenciés">
+                            <span class="back-label">Gestion des Licenciés</span>
+                        </div>
+                        <div class="back-image">
+                            <img src="img/tennis-3.png" alt="Gestion du Bureau">
+                            <span class="back-label">Gestion du Bureau</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 2 - DBS4MATHS -->
+            <article class="project-card flip-card-small">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="project-image">
+                            <img src="img/project2-front.png" alt="DBS4MATHS - Accueil">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">Plateforme Web</span>
+                            <h3 class="project-title">DBS4MATHS</h3>
+                            <p class="project-description">
+                                Plateforme éducative complète avec authentification sécurisée, calculatrice scientifique, 
+                                convertisseur d'unités, simulateurs (notes, tirages) et jeux mathématiques 
+                                (Marelle, Puissance 4, Dames, Sudoku, Calcul mental).
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">PHP</span>
+                                <span class="tag">MySQL</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">CSS</span>
+                            </div>
+                            <span class="flip-hint">↻ Survoler</span>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="back-image-single">
+                            <img src="img/project2-back.png" alt="DBS4MATHS - Jeux">
+                            <span class="back-label">Sélection des jeux</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 3 - Coming Soon -->
+            <article class="project-card flip-card-small project-coming-soon">
+                <div class="project-content coming-soon-content">
+                    <div class="coming-soon-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span class="project-category">En développement</span>
+                    <h3 class="project-title">Projet à venir</h3>
+                    <p class="project-description">
+                        Un nouveau projet est actuellement en cours de développement.
+                        Revenez bientôt pour découvrir ma prochaine réalisation !
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Coming Soon</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="competences" class="skills">
+        <div class="section-header">
+            <span class="section-tag">Expertise</span>
+            <h2 class="section-title">Compétences<span class="accent">.</span></h2>
+            <p class="section-subtitle">Technologies et outils que je maîtrise</p>
+        </div>
+
+        <div class="skills-container">
+            <div class="skills-category">
+                <div class="category-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                        <path d="M16 18L22 12L16 6M8 6L2 12L8 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3 class="category-title">Frontend</h3>
+                <p class="category-description">Création d'interfaces web modernes et responsives</p>
+                <div class="skills-tags">
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3 / Sass</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Responsive Design</span>
+                    <span class="skill-tag">Animations CSS</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <div class="category-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                        <path d="M4 19.5A2.5 2.5 0 016.5 17H20M4 19.5A2.5 2.5 0 014 17V5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2H6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3 class="category-title">Backend</h3>
+                <p class="category-description">Développement serveur et gestion de bases de données</p>
+                <div class="skills-tags">
+                    <span class="skill-tag">PHP 8</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">Architecture MVC</span>
+                    <span class="skill-tag">API REST</span>
+                    <span class="skill-tag">Sécurité ANSSI</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <div class="category-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                        <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3 class="category-title">Outils</h3>
+                <p class="category-description">Environnement de développement et versioning</p>
+                <div class="skills-tags">
+                    <span class="skill-tag">Git / GitHub</span>
+                    <span class="skill-tag">VS Code</span>
+                    <span class="skill-tag">Composer</span>
+                    <span class="skill-tag">MAMP</span>
+                    <span class="skill-tag">Postman</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-header">
+            <span class="section-tag">Parlons ensemble</span>
+            <h2 class="section-title">Contact<span class="accent">.</span></h2>
+            <p class="section-subtitle">Un projet en tête ? N'hésitez pas à me contacter</p>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <p class="contact-text">
+                    Vous avez un projet en tête ou une question ?
+                    N'hésitez pas à me contacter, je serai ravi d'échanger avec vous !
+                </p>
+                <div class="contact-links">
+                    <a href="mailto:minarro.maxence@icloud.com" class="contact-link">
+                        <div class="contact-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="contact-detail">
+                            <span class="contact-label">Email</span>
+                            <span class="contact-value">minarro.maxence@icloud.com</span>
+                        </div>
+                    </a>
+                    <a href="https://linkedin.com/in/MaxenceMinarro" target="_blank" class="contact-link">
+                        <div class="contact-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="contact-detail">
+                            <span class="contact-label">LinkedIn</span>
+                            <span class="contact-value">Voir mon profil</span>
+                        </div>
+                    </a>
+                    <a href="https://github.com/MaxenceMinarro" target="_blank" class="contact-link">
+                        <div class="contact-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <div class="contact-detail">
+                            <span class="contact-label">GitHub</span>
+                            <span class="contact-value">Voir mes repos</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contactForm" action="https://formspree.io/f/xqeeadvv" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Nom</label>
+                        <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Sujet</label>
+                    <input type="text" id="subject" name="subject" placeholder="Sujet de votre message" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
+                </div>
+                <input type="hidden" name="_subject" value="Nouveau message depuis ton portfolio">
+                <input type="hidden" name="_next" value="https://maxenceminarro.github.io/#contact">
+                <button type="submit" class="btn btn-primary btn-submit">
+                    <span>Envoyer le message</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="#" class="footer-logo">Maxence<span class="accent">.</span></a>
+            <p class="footer-text">© 2025 Maxence Minarro. Tous droits réservés.</p>
+            <div class="footer-social">
+                <a href="https://github.com/MaxenceMinarro" aria-label="GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z" fill="currentColor"/>
+                    </svg>
+                </a>
+                <a href="https://linkedin.com/in/MaxenceMinarro" target="_blank" aria-label="LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
