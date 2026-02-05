@@ -80,6 +80,15 @@ if (navToggle && navLinks) {
             document.body.style.overflow = '';
         });
     });
+
+    // Close menu with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+            navToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
 }
 
 // ========================================
@@ -155,28 +164,31 @@ if (skillCategories.length > 0) {
 const nav = document.querySelector('.nav');
 
 if (nav) {
-    let lastScrollY = window.pageYOffset;
+    let lastScrollY = window.scrollY;
+    let navTicking = false;
 
     window.addEventListener('scroll', () => {
-        const currentScrollY = window.pageYOffset;
+        if (navTicking) return;
+        navTicking = true;
 
-        // Hide navbar when scrolling down, show when scrolling up
-        if (currentScrollY > lastScrollY && currentScrollY > 100) {
-            // Scrolling down & past 100px
-            nav.classList.add('nav-hidden');
-        } else {
-            // Scrolling up
-            nav.classList.remove('nav-hidden');
-        }
+        requestAnimationFrame(() => {
+            const currentScrollY = window.scrollY;
 
-        // Background on scroll
-        if (currentScrollY > 50) {
-            nav.classList.add('scrolled');
-        } else {
-            nav.classList.remove('scrolled');
-        }
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                nav.classList.add('nav-hidden');
+            } else {
+                nav.classList.remove('nav-hidden');
+            }
 
-        lastScrollY = currentScrollY;
+            if (currentScrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+
+            lastScrollY = currentScrollY;
+            navTicking = false;
+        });
     });
 }
 
@@ -186,29 +198,94 @@ if (nav) {
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
+    // Validation d'un champ individuel
+    function validateField(input) {
+        const value = input.value.trim();
+        let error = '';
+
+        if (!value) {
+            error = 'Ce champ est requis';
+        } else if (input.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+            error = 'Adresse email invalide';
+        } else if (input.name === 'name' && value.length < 2) {
+            error = 'Le nom doit contenir au moins 2 caractères';
+        } else if (input.name === 'message' && value.length < 10) {
+            error = 'Le message doit contenir au moins 10 caractères';
+        }
+
+        // Affichage ou suppression du message d'erreur
+        let errorEl = input.parentElement.querySelector('.form-error');
+        if (error) {
+            if (!errorEl) {
+                errorEl = document.createElement('span');
+                errorEl.className = 'form-error';
+                input.parentElement.appendChild(errorEl);
+            }
+            errorEl.textContent = error;
+            input.classList.add('input-error');
+            return false;
+        } else {
+            if (errorEl) errorEl.remove();
+            input.classList.remove('input-error');
+            return true;
+        }
+    }
+
+    // Validation en temps réel au blur
+    contactForm.querySelectorAll('input, textarea').forEach(input => {
+        input.addEventListener('blur', () => validateField(input));
+        input.addEventListener('input', () => {
+            if (input.classList.contains('input-error')) validateField(input);
+        });
+    });
+
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(contactForm);
-        const data = Object.fromEntries(formData);
-        
-        // Here you would typically send the data to a server
-        // For now, we'll just show a success message
-        
+
+        // Valider tous les champs
+        const inputs = contactForm.querySelectorAll('input:not([type="hidden"]), textarea');
+        let isValid = true;
+        inputs.forEach(input => {
+            if (!validateField(input)) isValid = false;
+        });
+
+        if (!isValid) return;
+
         const submitBtn = contactForm.querySelector('.btn-submit');
         const originalText = submitBtn.innerHTML;
-        
-        submitBtn.innerHTML = '<span>Message envoyé !</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-        submitBtn.style.background = '#27ae60';
-        
-        setTimeout(() => {
-            submitBtn.innerHTML = originalText;
-            submitBtn.style.background = '';
-            contactForm.reset();
-        }, 3000);
-        
-        console.log('Form submitted:', data);
+
+        // État de chargement
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span>Envoi en cours...</span>';
+
+        // Envoi réel via Formspree
+        const formData = new FormData(contactForm);
+
+        fetch(contactForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        })
+        .then(response => {
+            if (response.ok) {
+                submitBtn.innerHTML = '<span>Message envoyé !</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+                submitBtn.style.background = '#27ae60';
+                contactForm.reset();
+            } else {
+                throw new Error('Erreur serveur');
+            }
+        })
+        .catch(() => {
+            submitBtn.innerHTML = '<span>Erreur, réessayez</span>';
+            submitBtn.style.background = '#e74c3c';
+        })
+        .finally(() => {
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.style.background = '';
+                submitBtn.disabled = false;
+            }, 3000);
+        });
     });
 }
 
@@ -217,17 +294,25 @@ if (contactForm) {
 // ========================================
 const floatingElements = document.querySelectorAll('.float-circle, .float-arch');
 
-if (floatingElements.length > 0) {
+if (floatingElements.length > 0 && window.matchMedia('(min-width: 769px)').matches) {
+    let parallaxTicking = false;
+
     window.addEventListener('mousemove', (e) => {
-        const x = e.clientX / window.innerWidth;
-        const y = e.clientY / window.innerHeight;
-        
-        floatingElements.forEach((el, index) => {
-            const speed = (index + 1) * 15;
-            const xOffset = (x - 0.5) * speed;
-            const yOffset = (y - 0.5) * speed;
-            
-            el.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+        if (parallaxTicking) return;
+        parallaxTicking = true;
+
+        requestAnimationFrame(() => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+
+            floatingElements.forEach((el, index) => {
+                const speed = (index + 1) * 15;
+                const xOffset = (x - 0.5) * speed;
+                const yOffset = (y - 0.5) * speed;
+
+                el.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+            });
+            parallaxTicking = false;
         });
     });
 }
@@ -238,25 +323,81 @@ if (floatingElements.length > 0) {
 const sections = document.querySelectorAll('section[id]');
 
 if (sections.length > 0 && navLinks) {
+    let activeNavTicking = false;
+
     window.addEventListener('scroll', () => {
-        let current = '';
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            
-            if (pageYOffset >= sectionTop - 200) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === '#' + current) {
-                link.classList.add('active');
-            }
+        if (activeNavTicking) return;
+        activeNavTicking = true;
+
+        requestAnimationFrame(() => {
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+
+                if (window.scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+            activeNavTicking = false;
         });
     });
+}
+
+// ========================================
+// COPY EMAIL BUTTON
+// ========================================
+const copyBtn = document.querySelector('.copy-email-btn');
+
+if (copyBtn) {
+    const copyIcon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke="currentColor" stroke-width="1.5"/></svg>';
+    const checkIcon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+    function showCopied() {
+        copyBtn.classList.add('copied');
+        copyBtn.innerHTML = checkIcon;
+        setTimeout(() => {
+            copyBtn.classList.remove('copied');
+            copyBtn.innerHTML = copyIcon;
+        }, 2000);
+    }
+
+    copyBtn.addEventListener('click', () => {
+        const email = copyBtn.getAttribute('data-email');
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(email).then(showCopied).catch(() => {
+                // Fallback pour HTTP ou erreur clipboard
+                fallbackCopy(email);
+            });
+        } else {
+            fallbackCopy(email);
+        }
+    });
+
+    function fallbackCopy(text) {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+            document.execCommand('copy');
+            showCopied();
+        } catch (e) {
+            // Dernier recours : alerter l'utilisateur
+            prompt('Copiez ce mail :', text);
+        }
+        document.body.removeChild(textarea);
+    }
 }
 
 // ========================================
