@@ -772,7 +772,7 @@ section {
 .flip-card-small {
     background: none;
     box-shadow: none;
-    height: 380px;
+    height: 450px;
 }
 
 .flip-card-small:hover {
@@ -1061,7 +1061,7 @@ section {
         border-radius: var(--radius-lg) var(--radius-lg) 0 0;
     }
     .project-featured .flip-card-back { grid-template-columns: 1fr; }
-    .flip-card-small { height: 500px; }
+    .flip-card-small { height: 570px; }
 }
 
 /* ========================================
@@ -1447,7 +1447,7 @@ section {
     .btn { width: 100%; justify-content: center; }
     .project-content { padding: 1.5rem; }
     .project-featured { height: 750px; }
-    .flip-card-small { height: 520px; }
+    .flip-card-small { height: 620px; }
     .skills-category { padding: 1.5rem; }
     .contact-form { padding: 1.5rem; }
     .scroll-indicator { display: none; }
