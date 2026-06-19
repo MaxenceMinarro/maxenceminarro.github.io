@@ -1,0 +1,34 @@
+<svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Aperçu Offres d'achat immobilier">
+  <defs>
+    <linearGradient id="offreBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFCF7"/>
+      <stop offset="1" stop-color="#F5F0E8"/>
+    </linearGradient>
+    <linearGradient id="offreAccent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4A90B8"/>
+      <stop offset="1" stop-color="#1E6091"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#offreBg)"/>
+  <circle cx="350" cy="40" r="70" fill="#1E6091" opacity="0.06"/>
+  <circle cx="40" cy="210" r="55" fill="#C17F59" opacity="0.07"/>
+  <!-- Document offre -->
+  <g transform="translate(118,46)">
+    <rect x="0" y="0" width="120" height="150" rx="10" fill="#FFFFFF" stroke="#E8E2D9" stroke-width="1.5"/>
+    <rect x="18" y="22" width="84" height="8" rx="4" fill="url(#offreAccent)"/>
+    <rect x="18" y="42" width="64" height="6" rx="3" fill="#D4C4A8"/>
+    <rect x="18" y="58" width="74" height="6" rx="3" fill="#E8E2D9"/>
+    <rect x="18" y="74" width="50" height="6" rx="3" fill="#E8E2D9"/>
+    <!-- maison -->
+    <g transform="translate(40,96)">
+      <path d="M20 0 L40 16 L36 16 L36 38 L4 38 L4 16 L0 16 Z" fill="#1E6091" opacity="0.9"/>
+      <rect x="16" y="22" width="10" height="16" fill="#FFFCF7"/>
+    </g>
+  </g>
+  <!-- Badge euro signé -->
+  <g transform="translate(232,140)">
+    <circle cx="0" cy="0" r="30" fill="url(#offreAccent)"/>
+    <text x="0" y="11" font-family="Georgia, serif" font-size="34" fill="#FFFFFF" text-anchor="middle">€</text>
+  </g>
+  <text x="200" y="222" font-family="Outfit, sans-serif" font-size="14" font-weight="600" fill="#5D6D7E" text-anchor="middle" letter-spacing="1">OFFRE D'ACHAT</text>
+</svg>

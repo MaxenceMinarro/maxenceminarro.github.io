@@ -6,8 +6,7 @@
     <title>Maxence Minarro | Développeur Web à Nîmes</title>
 
     <!-- SEO de base -->
-    <meta name="description" content="Maxence Minarro, développeur web à Nîmes (30). Étudiant BTS SIO SLAM spécialisé en PHP, MySQL, JavaScript et architecture MVC. Portfolio et projets.">
-    <meta name="keywords" content="Maxence Minarro, développeur web Nîmes, développeur Nîmes, portfolio, PHP, MySQL, JavaScript, HTML, CSS, BTS SIO, SLAM, Nîmes, Gard, 30">
+    <meta name="description" content="Maxence Minarro, développeur web à Nîmes (30). Applications web et sites sur mesure en React, TypeScript, PHP et Python. Portfolio et projets.">
     <meta name="author" content="Maxence Minarro">
     <meta name="google-site-verification" content="CQfcqQu5K-HvF21MNhnQiM8goRAV6qa6olh7q_zGS1A" />
     <meta name="geo.region" content="FR-30">
@@ -19,17 +18,19 @@
 
     <!-- Open Graph (Facebook, LinkedIn) -->
     <meta property="og:title" content="Maxence Minarro | Développeur Web à Nîmes">
-    <meta property="og:description" content="Maxence Minarro, développeur web à Nîmes. Étudiant BTS SIO SLAM spécialisé en PHP, MySQL, JavaScript et architecture MVC.">
+    <meta property="og:description" content="Maxence Minarro, développeur web à Nîmes. Applications web et sites sur mesure en React, TypeScript, PHP et Python.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://maxenceminarro.github.io/">
-    <meta property="og:image" content="https://maxenceminarro.github.io/img/tennis-1.png">
+    <meta property="og:image" content="https://maxenceminarro.github.io/img/preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:locale" content="fr_FR">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Maxence Minarro | Développeur Web à Nîmes">
-    <meta name="twitter:description" content="Maxence Minarro, développeur web à Nîmes. Étudiant BTS SIO SLAM spécialisé en PHP, MySQL, JavaScript et architecture MVC.">
-    <meta name="twitter:image" content="https://maxenceminarro.github.io/img/tennis-1.png">
+    <meta name="twitter:description" content="Applications web et sites sur mesure en React, TypeScript, PHP et Python.">
+    <meta name="twitter:image" content="https://maxenceminarro.github.io/img/preview.png">
 
     <!-- Schema.org JSON-LD pour le SEO local -->
     <script type="application/ld+json">
@@ -50,14 +51,14 @@
             "postalCode": "30000",
             "addressCountry": "FR"
         },
-        "knowsAbout": ["PHP", "MySQL", "JavaScript", "HTML", "CSS", "Architecture MVC"]
+        "knowsAbout": ["React", "TypeScript", "JavaScript", "PHP", "Python", "MySQL", "HTML", "CSS", "Architecture MVC"]
     }
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=14">
+    <link rel="stylesheet" href="style.css?v=15">
 </head>
 <body>
     <!-- Preloader -->
@@ -106,8 +107,8 @@
                 <span class="title-name">Maxence Minarro<span class="accent">.</span></span>
             </h1>
             <p class="hero-description">
-                Étudiant BTS SIO SLAM impliqué dans mes projets.
-                Je transforme des idées en solutions numériques élégantes et fonctionnelles.
+                Développeur web et étudiant en BTS SIO SLAM. Je conçois des applications
+                web et des sites sur mesure, du design jusqu'au déploiement.
             </p>
             <div class="hero-cta">
                 <a href="#projets" class="btn btn-primary">
@@ -132,12 +133,40 @@
         <div class="section-header">
             <span class="section-tag">Portfolio</span>
             <h2 class="section-title">Mes Projets<span class="accent">.</span></h2>
-            <p class="section-subtitle">Une sélection de mes réalisations les plus récentes</p>
+            <p class="section-subtitle">Applications web et projets que j'ai conçus et développés</p>
         </div>
         
         <div class="projects-grid">
+            <!-- Projet vedette - FinanceImmo (en ligne) -->
+            <article class="project-card project-featured-live">
+                <div class="featured-image">
+                    <img src="img/financeimmo.svg" alt="FinanceImmo — tableau de bord d'analyse immobilière" loading="lazy">
+                </div>
+                <div class="project-content">
+                    <span class="project-category">Application Web · FinTech Immo</span>
+                    <h3 class="project-title">FinanceImmo<span class="accent">.</span></h3>
+                    <p class="project-description">
+                        Application web personnelle, déployée en production.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Flask</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">SQLite</span>
+                        <span class="tag">Nginx</span>
+                    </div>
+                    <div class="featured-actions">
+                        <a href="https://financeimmo.pro" class="btn btn-primary cta-btn" target="_blank" rel="noopener">
+                            <span>Voir le site</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                        <span class="featured-note">Accès privé · sur inscription</span>
+                    </div>
+                </div>
+            </article>
+
             <!-- Project 1 - Tennis Club -->
-            <article class="project-card project-featured flip-card">
+            <article class="project-card flip-card-small">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <div class="project-image">
@@ -150,38 +179,26 @@
                             <span class="project-category">Application Web</span>
                             <h3 class="project-title">Gestion Club de Tennis</h3>
                             <p class="project-description">
-                                Application web complète de gestion pour un club de tennis développée en architecture MVC. 
-                                Fonctionnalités : gestion des licenciés (CRUD), des formules d'inscription (cours collectifs, 
-                                individuels, championnats), du personnel (moniteurs, stagiaires), et du bureau avec mandats 
-                                temporels. Base de données MySQL avec 10 tables et 2 vues SQL. Sécurité renforcée : 
-                                authentification bcrypt, sessions sécurisées ANSSI, protection XSS, conformité RGPD, 
-                                et logging des connexions.
+                                Gestion complète d'un club de tennis en architecture MVC : licenciés (CRUD),
+                                formules d'inscription, personnel et bureau. Base MySQL et sécurité renforcée
+                                (bcrypt, sessions ANSSI, RGPD).
                             </p>
                             <div class="project-tags">
                                 <span class="tag">PHP 8</span>
                                 <span class="tag">MySQL</span>
                                 <span class="tag">MVC</span>
-                                <span class="tag">Composer</span>
                                 <span class="tag">RGPD</span>
-                                <span class="tag">Sécurité ANSSI</span>
                             </div>
                             <span class="flip-hint">↻ Survoler</span>
                         </div>
                     </div>
                     <div class="flip-card-back">
-                        <div class="back-image">
+                        <div class="back-image-single">
                             <picture>
                                 <source srcset="img/tennis-2.webp" type="image/webp">
                                 <img src="img/tennis-2.png" alt="Gestion des Licenciés" loading="lazy">
                             </picture>
                             <span class="back-label">Gestion des Licenciés</span>
-                        </div>
-                        <div class="back-image">
-                            <picture>
-                                <source srcset="img/tennis-3.webp" type="image/webp">
-                                <img src="img/tennis-3.png" alt="Gestion du Bureau" loading="lazy">
-                            </picture>
-                            <span class="back-label">Gestion du Bureau</span>
                         </div>
                     </div>
                 </div>
@@ -226,22 +243,136 @@
                 </div>
             </article>
 
-            <!-- Project 3 - Coming Soon -->
-            <article class="project-card flip-card-small project-coming-soon">
-                <div class="project-content coming-soon-content">
-                    <div class="coming-soon-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-                            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+            <!-- Project 3 - Offre (immobilier) -->
+            <article class="project-card flip-card-small">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="project-image">
+                            <img src="img/immo-offre.svg" alt="Aperçu Offre — offres d'achat immobilier" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">Application Web · Immobilier</span>
+                            <h3 class="project-title">Offre</h3>
+                            <p class="project-description">
+                                Outil de génération et de suivi d'offres d'achat immobilières :
+                                saisie guidée, calcul des montants et export propre du document.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">TypeScript</span>
+                                <span class="tag">Vite</span>
+                            </div>
+                            <span class="flip-hint">↻ Survoler pour le lien</span>
+                        </div>
                     </div>
-                    <span class="project-category">En développement</span>
-                    <h3 class="project-title">Projet à venir</h3>
-                    <p class="project-description">
-                        Un nouveau projet est actuellement en cours de développement.
-                        Revenez bientôt pour découvrir ma prochaine réalisation !
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Coming Soon</span>
+                    <div class="flip-card-back flip-card-cta">
+                        <h3 class="cta-title">Offre</h3>
+                        <p class="cta-text">Application de rédaction d'offres d'achat pour l'immobilier.</p>
+                        <div class="cta-actions">
+                            <a href="https://offre-achat-immo.vercel.app/offre/" class="btn btn-primary cta-btn" target="_blank" rel="noopener">
+                                <span>Voir l'app</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 4 - Marchand Immo -->
+            <article class="project-card flip-card-small">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="project-image">
+                            <img src="img/immo-marchand.svg" alt="Aperçu Marchand Immo — calcul de marge" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">Application Web · Immobilier</span>
+                            <h3 class="project-title">Marchand Immo</h3>
+                            <p class="project-description">
+                                Simulateur pour marchand de biens : prix d'achat, coût de revient,
+                                marge de revente, en bien unique ou avec découpe en lots.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">TypeScript</span>
+                                <span class="tag">Vite</span>
+                            </div>
+                            <span class="flip-hint">↻ Survoler pour le lien</span>
+                        </div>
+                    </div>
+                    <div class="flip-card-back flip-card-cta">
+                        <h3 class="cta-title">Marchand Immo</h3>
+                        <p class="cta-text">Calcul d'achat, de coût de revient et de marge de revente.</p>
+                        <div class="cta-actions">
+                            <a href="https://offre-achat-immo.vercel.app/marchand-immo/" class="btn btn-primary cta-btn" target="_blank" rel="noopener">
+                                <span>Voir l'app</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 5 - Impôts Micro -->
+            <article class="project-card flip-card-small">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="project-image">
+                            <img src="img/immo-impots.svg" alt="Aperçu Impôts Micro — simulateur de régimes" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">Application Web · Fiscalité</span>
+                            <h3 class="project-title">Impôts Micro</h3>
+                            <p class="project-description">
+                                Comparateur d'imposition et de cotisations selon le régime :
+                                micro, réel / IR, EURL-IS et SASU-IS, en un coup d'œil.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">TypeScript</span>
+                                <span class="tag">Vite</span>
+                            </div>
+                            <span class="flip-hint">↻ Survoler pour le lien</span>
+                        </div>
+                    </div>
+                    <div class="flip-card-back flip-card-cta">
+                        <h3 class="cta-title">Impôts Micro</h3>
+                        <p class="cta-text">Calcul d'impôts et de cotisations par régime fiscal.</p>
+                        <div class="cta-actions">
+                            <span class="cta-soon">Démo bientôt en ligne</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 6 - Rentabilité Immo -->
+            <article class="project-card flip-card-small">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="project-image">
+                            <img src="img/immo-rentabilite.svg" alt="Aperçu Rentabilité Immo — rentabilité locative" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">Application Web · Immobilier</span>
+                            <h3 class="project-title">Rentabilité Immo</h3>
+                            <p class="project-description">
+                                Calcul de rentabilité locative qui compare un bien loué à un bien
+                                non loué pour mesurer l'intérêt réel d'un investissement.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">TypeScript</span>
+                                <span class="tag">Vite</span>
+                            </div>
+                            <span class="flip-hint">↻ Survoler pour le lien</span>
+                        </div>
+                    </div>
+                    <div class="flip-card-back flip-card-cta">
+                        <h3 class="cta-title">Rentabilité Immo</h3>
+                        <p class="cta-text">Comparaison de rentabilité : bien loué contre bien non loué.</p>
+                        <div class="cta-actions">
+                            <span class="cta-soon">Démo bientôt en ligne</span>
+                        </div>
                     </div>
                 </div>
             </article>
@@ -269,8 +400,9 @@
                     <span class="skill-tag">HTML5</span>
                     <span class="skill-tag">CSS3 / Sass</span>
                     <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">TypeScript</span>
                     <span class="skill-tag">Responsive Design</span>
-                    <span class="skill-tag">Animations CSS</span>
                 </div>
             </div>
 
@@ -284,6 +416,8 @@
                 <p class="category-description">Développement serveur et gestion de bases de données</p>
                 <div class="skills-tags">
                     <span class="skill-tag">PHP 8</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Flask</span>
                     <span class="skill-tag">MySQL</span>
                     <span class="skill-tag">Architecture MVC</span>
                     <span class="skill-tag">API REST</span>
@@ -302,6 +436,7 @@
                 <div class="skills-tags">
                     <span class="skill-tag">Git / GitHub</span>
                     <span class="skill-tag">VS Code</span>
+                    <span class="skill-tag">Vite</span>
                     <span class="skill-tag">Composer</span>
                     <span class="skill-tag">MAMP</span>
                     <span class="skill-tag">Postman</span>
@@ -420,6 +555,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=2"></script>
 </body>
 </html>

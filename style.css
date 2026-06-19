@@ -1452,3 +1452,170 @@ section {
     .contact-form { padding: 1.5rem; }
     .scroll-indicator { display: none; }
 }
+
+/* ========================================
+   NOUVEAUX PROJETS — CARTE VEDETTE LIVE,
+   VERSO CTA, ÉTAT TACTILE & CORRECTIFS
+   ======================================== */
+
+/* Carte vedette "en ligne" (FinanceImmo) */
+.project-featured-live {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    min-height: 320px;
+    background: var(--color-white);
+    overflow: hidden;
+}
+
+.project-featured-live .featured-image {
+    overflow: hidden;
+    background: var(--color-bg-warm);
+}
+
+.project-featured-live .featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform var(--transition-medium);
+}
+
+.project-featured-live:hover .featured-image img {
+    transform: scale(1.04);
+}
+
+.project-featured-live .project-content {
+    padding: 2.25rem 2.5rem;
+    justify-content: center;
+}
+
+.project-featured-live .project-description {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+}
+
+.featured-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.featured-actions .cta-btn {
+    background: var(--color-accent);
+    color: var(--color-white);
+    box-shadow: 0 4px 15px rgba(30, 96, 145, 0.3);
+}
+
+.featured-actions .cta-btn:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-2px);
+}
+
+.featured-note {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+}
+
+@media (max-width: 900px) {
+    .project-featured-live { grid-template-columns: 1fr; height: auto; }
+    .project-featured-live .featured-image { height: 200px; }
+}
+
+/* Verso "panneau d'accès" des cartes applications */
+.flip-card-small .flip-card-back.flip-card-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.85rem;
+    padding: 1.75rem;
+    background: linear-gradient(150deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
+    color: var(--color-white);
+}
+
+.flip-card-cta .cta-title {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--color-white);
+}
+
+.flip-card-cta .cta-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 230px;
+}
+
+.flip-card-cta .cta-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0.35rem;
+}
+
+.flip-card-cta .cta-btn {
+    padding: 0.7rem 1.3rem;
+    font-size: 0.85rem;
+    background: var(--color-white);
+    color: var(--color-accent);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
+.flip-card-cta .cta-btn:hover {
+    background: var(--color-bg-cream);
+    color: var(--color-accent-hover);
+    transform: translateY(-2px);
+}
+
+.cta-soon {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-white);
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: var(--radius-md);
+}
+
+/* Réserve l'espace du badge pour qu'il ne chevauche pas les tags */
+.flip-card-small .flip-card-front .project-content {
+    padding-bottom: 2.75rem;
+}
+
+/* Flip accessible au tactile (classe .flipped ajoutée en JS) */
+.flip-card-small.flipped .flip-card-front {
+    opacity: 0;
+    transform: scale(0.98);
+    pointer-events: none;
+}
+
+.flip-card-small.flipped .flip-card-back {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Le verso n'intercepte les clics que lorsqu'il est visible */
+.flip-card-small .flip-card-back {
+    pointer-events: none;
+}
+
+.flip-card-small:hover .flip-card-back,
+.flip-card-small.flipped .flip-card-back {
+    pointer-events: auto;
+}
+
+/* Email/contact : éviter toute troncature sur petits écrans */
+.contact-value {
+    overflow-wrap: anywhere;
+}
