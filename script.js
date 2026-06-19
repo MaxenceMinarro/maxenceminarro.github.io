@@ -437,3 +437,22 @@ projectCards.forEach(card => {
         card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
     });
 });
+
+// ========================================
+// FLIP CARDS — SUPPORT TACTILE (pas de survol)
+// ========================================
+// Sur les appareils sans survol (mobile/tablette), le verso des cartes
+// — qui contient les liens d'accès — n'est jamais visible au survol.
+// On le rend accessible au tap et on adapte le libellé de l'indice.
+if (window.matchMedia('(hover: none)').matches) {
+    document.querySelectorAll('.flip-card-small').forEach(card => {
+        const hint = card.querySelector('.flip-hint');
+        if (hint) hint.textContent = '↻ Toucher pour voir';
+
+        card.addEventListener('click', (e) => {
+            // Laisser les liens/boutons fonctionner sans re-basculer la carte
+            if (e.target.closest('a, button')) return;
+            card.classList.toggle('flipped');
+        });
+    });
+}

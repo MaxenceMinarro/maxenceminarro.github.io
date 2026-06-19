@@ -1,0 +1,34 @@
+<svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Aperçu Marchand de biens">
+  <defs>
+    <linearGradient id="marchBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFCF7"/>
+      <stop offset="1" stop-color="#F5F0E8"/>
+    </linearGradient>
+    <linearGradient id="marchAccent" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#4A90B8"/>
+      <stop offset="1" stop-color="#1E6091"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#marchBg)"/>
+  <circle cx="60" cy="40" r="70" fill="#1E6091" opacity="0.06"/>
+  <circle cx="360" cy="200" r="60" fill="#C17F59" opacity="0.08"/>
+  <!-- maison source -->
+  <g transform="translate(60,118)">
+    <path d="M28 0 L56 22 L50 22 L50 64 L6 64 L6 22 L0 22 Z" fill="#D4C4A8"/>
+    <rect x="22" y="36" width="14" height="28" fill="#FFFCF7"/>
+  </g>
+  <!-- flèche marge -->
+  <g transform="translate(150,150)">
+    <path d="M0 20 L40 20" stroke="#8E9EAB" stroke-width="3" stroke-linecap="round"/>
+    <path d="M34 12 L44 20 L34 28" fill="none" stroke="#8E9EAB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <!-- bars marge croissante -->
+  <g transform="translate(210,60)">
+    <rect x="0" y="90" width="26" height="40" rx="3" fill="#D4C4A8"/>
+    <rect x="40" y="60" width="26" height="70" rx="3" fill="#4A90B8"/>
+    <rect x="80" y="20" width="26" height="110" rx="3" fill="url(#marchAccent)"/>
+    <path d="M6 96 L52 60 L92 22" fill="none" stroke="#C17F59" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="92" cy="22" r="5" fill="#C17F59"/>
+  </g>
+  <text x="200" y="222" font-family="Outfit, sans-serif" font-size="14" font-weight="600" fill="#5D6D7E" text-anchor="middle" letter-spacing="1">ACHAT · COÛT · MARGE</text>
+</svg>
